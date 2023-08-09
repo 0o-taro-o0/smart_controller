@@ -1,0 +1,1 @@
+{"devices": [{"device_name": "postman0"}, {"device_name": "docker01"}], "signals": [], "tasks": [{"taks_name": "", "device_id": "", "signal_id": "", "condition": {"month": 0, "date": 0, "day": -1, "time": "hh:mm", "temp": ">0", "humd": ">0"}}]}

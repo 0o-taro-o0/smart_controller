@@ -1,0 +1,791 @@
+*** Starting uWSGI 2.0.22 (64bit) on [Wed Aug  9 06:14:15 2023] ***
+compiled with version: 12.2.0 on 09 August 2023 06:13:23
+os: Linux-5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023
+nodename: c00db855cd07
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 24
+current working directory: /app
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/uwsgi.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.11.4 (main, Jul 28 2023, 05:02:22) [GCC 12.2.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7f02bbe09578
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7f02bbe09578 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 7, cores: 1)
+[pid: 7|app: 0|req: 1/1] 172.19.0.1 () {58 vars in 1052 bytes} [Wed Aug  9 06:15:21 2023] GET / => generated 12 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 2/2] 172.19.0.1 () {56 vars in 979 bytes} [Wed Aug  9 06:15:21 2023] GET /favicon.ico => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 3/3] 172.19.0.1 () {58 vars in 1102 bytes} [Wed Aug  9 06:15:40 2023] GET /smart-controller/devices/ => generated 1589 bytes in 12 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 4/4] 172.19.0.1 () {56 vars in 992 bytes} [Wed Aug  9 06:15:40 2023] GET /static/css/bootstrap.min.css => generated 160682 bytes in 8 msecs via sendfile() (HTTP/1.1 200) 7 headers in 293 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 5/5] 172.19.0.1 () {56 vars in 980 bytes} [Wed Aug  9 06:15:40 2023] GET /static/js/jquery-3.7.0.min.js => generated 87462 bytes in 6 msecs via sendfile() (HTTP/1.1 200) 7 headers in 300 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 6/6] 172.19.0.1 () {56 vars in 988 bytes} [Wed Aug  9 06:15:40 2023] GET /static/js/bootstrap.bundle.min.js => generated 80698 bytes in 6 msecs via sendfile() (HTTP/1.1 200) 7 headers in 303 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 7/7] 172.19.0.1 () {60 vars in 1185 bytes} [Wed Aug  9 06:15:43 2023] GET /smart-controller/devices/postman0/ => generated 1469 bytes in 8 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 8/8] 172.19.0.1 () {60 vars in 1116 bytes} [Wed Aug  9 06:15:43 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 5 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 9/9] 172.19.0.1 () {60 vars in 1103 bytes} [Wed Aug  9 06:15:43 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 10/10] 172.19.0.1 () {60 vars in 1110 bytes} [Wed Aug  9 06:15:43 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 11/11] 172.19.0.1 () {60 vars in 1176 bytes} [Wed Aug  9 06:15:44 2023] GET /smart-controller/devices/ => generated 1589 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 12/12] 172.19.0.1 () {60 vars in 1094 bytes} [Wed Aug  9 06:15:44 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 13/13] 172.19.0.1 () {60 vars in 1101 bytes} [Wed Aug  9 06:15:44 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 14/14] 172.19.0.1 () {60 vars in 1107 bytes} [Wed Aug  9 06:15:44 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 15/15] 172.19.0.1 () {42 vars in 790 bytes} [Wed Aug  9 06:16:20 2023] GET /smart-controller/devices/ => generated 1589 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 16/16] 172.19.0.1 () {42 vars in 698 bytes} [Wed Aug  9 06:16:20 2023] GET /static/js/jquery-3.7.0.min.js => generated 87462 bytes in 6 msecs via sendfile() (HTTP/1.1 200) 7 headers in 300 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 17/17] 172.19.0.1 () {42 vars in 711 bytes} [Wed Aug  9 06:16:20 2023] GET /static/css/bootstrap.min.css => generated 160682 bytes in 6 msecs via sendfile() (HTTP/1.1 200) 7 headers in 293 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 18/18] 172.19.0.1 () {42 vars in 706 bytes} [Wed Aug  9 06:16:20 2023] GET /static/js/bootstrap.bundle.min.js => generated 80698 bytes in 5 msecs via sendfile() (HTTP/1.1 200) 7 headers in 303 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 19/19] 172.19.0.1 () {42 vars in 723 bytes} [Wed Aug  9 06:16:20 2023] GET /favicon.ico => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 20/20] 172.19.0.1 () {42 vars in 788 bytes} [Wed Aug  9 06:17:17 2023] GET /smart-controller/devices => generated 289 bytes in 1 msecs (HTTP/1.1 308) 3 headers in 159 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 21/21] 172.19.0.1 () {42 vars in 790 bytes} [Wed Aug  9 06:17:17 2023] GET /smart-controller/devices/ => generated 1589 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 22/22] 172.19.0.1 () {42 vars in 711 bytes} [Wed Aug  9 06:17:17 2023] GET /static/css/bootstrap.min.css => generated 160682 bytes in 12 msecs via sendfile() (HTTP/1.1 200) 7 headers in 293 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 23/23] 172.19.0.1 () {42 vars in 698 bytes} [Wed Aug  9 06:17:17 2023] GET /static/js/jquery-3.7.0.min.js => generated 87462 bytes in 6 msecs via sendfile() (HTTP/1.1 200) 7 headers in 300 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 24/24] 172.19.0.1 () {42 vars in 706 bytes} [Wed Aug  9 06:17:17 2023] GET /static/js/bootstrap.bundle.min.js => generated 80698 bytes in 4 msecs via sendfile() (HTTP/1.1 200) 7 headers in 303 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 25/25] 172.19.0.1 () {42 vars in 723 bytes} [Wed Aug  9 06:17:17 2023] GET /favicon.ico => generated 207 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 26/26] 172.19.0.1 () {44 vars in 875 bytes} [Wed Aug  9 06:17:19 2023] GET /smart-controller/devices/postman0/ => generated 1469 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 27/27] 172.19.0.1 () {46 vars in 835 bytes} [Wed Aug  9 06:17:19 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 13 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 28/28] 172.19.0.1 () {46 vars in 821 bytes} [Wed Aug  9 06:17:19 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 6 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 29/29] 172.19.0.1 () {46 vars in 828 bytes} [Wed Aug  9 06:17:19 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 30/30] 172.19.0.1 () {44 vars in 866 bytes} [Wed Aug  9 06:17:21 2023] GET /smart-controller/devices/ => generated 1589 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 31/31] 172.19.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:17:21 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 9 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 32/32] 172.19.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:17:21 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 33/33] 172.19.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:17:21 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 34/34] 172.19.0.1 () {46 vars in 897 bytes} [Wed Aug  9 06:17:23 2023] GET /smart-controller/devices/ => generated 1589 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 35/35] 172.19.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:17:23 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 11 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 36/36] 172.19.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:17:23 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 37/37] 172.19.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:17:23 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 5 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 38/38] 172.19.0.1 () {44 vars in 875 bytes} [Wed Aug  9 06:17:31 2023] GET /smart-controller/devices/postman0/ => generated 1469 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 39/39] 172.19.0.1 () {46 vars in 835 bytes} [Wed Aug  9 06:17:31 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 7 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 40/40] 172.19.0.1 () {46 vars in 821 bytes} [Wed Aug  9 06:17:31 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 41/41] 172.19.0.1 () {46 vars in 828 bytes} [Wed Aug  9 06:17:31 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 42/42] 172.19.0.1 () {44 vars in 866 bytes} [Wed Aug  9 06:17:32 2023] GET /smart-controller/devices/ => generated 1589 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 43/43] 172.19.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:17:32 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 8 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 44/44] 172.19.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:17:32 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 45/45] 172.19.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:17:32 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 46/46] 172.19.0.1 () {44 vars in 853 bytes} [Wed Aug  9 06:17:34 2023] GET /smart-controller/tasks/ => generated 9 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 78 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 47/47] 172.19.0.1 () {44 vars in 857 bytes} [Wed Aug  9 06:17:36 2023] GET /smart-controller/devices/ => generated 1589 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 48/48] 172.19.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:17:36 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 12 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 49/49] 172.19.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:17:36 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 50/50] 172.19.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:17:36 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 51/51] 172.19.0.1 () {44 vars in 857 bytes} [Wed Aug  9 06:17:44 2023] GET /smart-controller/devices/ => generated 1589 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 52/52] 172.19.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:17:44 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 7 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 53/53] 172.19.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:17:44 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 5 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 54/54] 172.19.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:17:44 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 55/55] 172.19.0.1 () {44 vars in 853 bytes} [Wed Aug  9 06:17:46 2023] GET /smart-controller/tasks/ => generated 9 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 78 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 56/56] 172.19.0.1 () {44 vars in 857 bytes} [Wed Aug  9 06:17:48 2023] GET /smart-controller/devices/ => generated 1589 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 57/57] 172.19.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:17:48 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 10 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 58/58] 172.19.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:17:48 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 59/59] 172.19.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:17:48 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 60/60] 172.19.0.1 () {44 vars in 875 bytes} [Wed Aug  9 06:17:51 2023] GET /smart-controller/devices/postman0/ => generated 1469 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 61/61] 172.19.0.1 () {46 vars in 835 bytes} [Wed Aug  9 06:17:51 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 7 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 62/62] 172.19.0.1 () {46 vars in 828 bytes} [Wed Aug  9 06:17:51 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 63/63] 172.19.0.1 () {46 vars in 821 bytes} [Wed Aug  9 06:17:51 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 64/64] 172.19.0.1 () {44 vars in 866 bytes} [Wed Aug  9 06:17:51 2023] GET /smart-controller/devices/ => generated 1589 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 65/65] 172.19.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:17:51 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 8 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 66/66] 172.19.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:17:51 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 6 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 67/67] 172.19.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:17:51 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 68/68] 172.19.0.1 () {46 vars in 897 bytes} [Wed Aug  9 06:18:07 2023] GET /smart-controller/devices/ => generated 1589 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 69/69] 172.19.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:18:08 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 8 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 70/70] 172.19.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:18:08 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 5 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 71/71] 172.19.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:18:08 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 72/72] 172.19.0.1 () {44 vars in 875 bytes} [Wed Aug  9 06:18:09 2023] GET /smart-controller/devices/postman0/ => generated 1469 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 73/73] 172.19.0.1 () {46 vars in 821 bytes} [Wed Aug  9 06:18:09 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 11 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 74/74] 172.19.0.1 () {46 vars in 828 bytes} [Wed Aug  9 06:18:09 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 6 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 75/75] 172.19.0.1 () {46 vars in 835 bytes} [Wed Aug  9 06:18:09 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 76/76] 172.19.0.1 () {42 vars in 740 bytes} [Wed Aug  9 06:21:00 2023] GET / => generated 12 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 77/77] 172.19.0.1 () {42 vars in 790 bytes} [Wed Aug  9 06:21:05 2023] GET /smart-controller/devices/ => generated 1589 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 78/78] 172.19.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:21:05 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 79/79] 172.19.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:21:05 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 5 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 80/80] 172.19.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:21:05 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /app
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 (/tmp/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /app/app.ini
+*** Starting uWSGI 2.0.22 (64bit) on [Wed Aug  9 06:21:51 2023] ***
+compiled with version: 12.2.0 on 09 August 2023 06:13:23
+os: Linux-5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023
+nodename: c00db855cd07
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 24
+current working directory: /app
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /tmp/uwsgi.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.11.4 (main, Jul 28 2023, 05:02:22) [GCC 12.2.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7f9a5e056578
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7f9a5e056578 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 8, cores: 1)
+*** Starting uWSGI 2.0.22 (64bit) on [Wed Aug  9 06:22:01 2023] ***
+compiled with version: 12.2.0 on 09 August 2023 06:13:23
+os: Linux-5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023
+nodename: c00db855cd07
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 24
+current working directory: /app
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/uwsgi.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.11.4 (main, Jul 28 2023, 05:02:22) [GCC 12.2.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7fec85cf1578
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7fec85cf1578 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 7, cores: 1)
+[pid: 7|app: 0|req: 1/1] 172.19.0.1 () {44 vars in 875 bytes} [Wed Aug  9 06:22:12 2023] GET /smart-controller/devices/postman0/ => generated 1469 bytes in 17 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 2/2] 172.19.0.1 () {46 vars in 835 bytes} [Wed Aug  9 06:22:12 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 14 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 3/3] 172.19.0.1 () {46 vars in 821 bytes} [Wed Aug  9 06:22:12 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 4/4] 172.19.0.1 () {46 vars in 828 bytes} [Wed Aug  9 06:22:12 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 5/5] 172.19.0.1 () {44 vars in 766 bytes} [Wed Aug  9 06:22:52 2023] GET /smart-controller/devices/ => generated 1589 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+docker01
+['postman0']
+[pid: 7|app: 0|req: 6/6] 172.19.0.1 () {44 vars in 767 bytes} [Wed Aug  9 06:23:18 2023] POST /smart-controller/devices/ => generated 239 bytes in 2 msecs (HTTP/1.1 302) 3 headers in 121 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 7/7] 172.19.0.1 () {42 vars in 614 bytes} [Wed Aug  9 06:23:18 2023] GET /smart-controller/devices/ => generated 1755 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 8/8] 172.19.0.1 () {46 vars in 897 bytes} [Wed Aug  9 06:23:25 2023] GET /smart-controller/devices/ => generated 1755 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 9/9] 172.19.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:23:25 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 10 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 10/10] 172.19.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:23:25 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 5 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 11/11] 172.19.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:23:25 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 12/12] 172.19.0.1 () {44 vars in 875 bytes} [Wed Aug  9 06:23:38 2023] GET /smart-controller/devices/docker01/ => generated 1469 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 13/13] 172.19.0.1 () {46 vars in 835 bytes} [Wed Aug  9 06:23:38 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 5 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 14/14] 172.19.0.1 () {46 vars in 821 bytes} [Wed Aug  9 06:23:38 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 15/15] 172.19.0.1 () {46 vars in 828 bytes} [Wed Aug  9 06:23:38 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 16/16] 172.19.0.1 () {44 vars in 875 bytes} [Wed Aug  9 06:23:54 2023] GET /smart-controller/devices/postman0/ => generated 1469 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 17/17] 172.19.0.1 () {46 vars in 835 bytes} [Wed Aug  9 06:23:54 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 13 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 18/18] 172.19.0.1 () {46 vars in 828 bytes} [Wed Aug  9 06:23:54 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 6 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 19/19] 172.19.0.1 () {46 vars in 821 bytes} [Wed Aug  9 06:23:54 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 20/20] 172.19.0.1 () {44 vars in 866 bytes} [Wed Aug  9 06:23:55 2023] GET /smart-controller/devices/ => generated 1755 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 21/21] 172.19.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:23:55 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 7 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 22/22] 172.19.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:23:55 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 6 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 23/23] 172.19.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:23:55 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 24/24] 172.19.0.1 () {44 vars in 866 bytes} [Wed Aug  9 06:23:58 2023] GET /smart-controller/devices/ => generated 1755 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 25/25] 172.19.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:23:59 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 13 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 26/26] 172.19.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:23:59 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 5 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 27/27] 172.19.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:23:59 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 28/28] 172.19.0.1 () {44 vars in 875 bytes} [Wed Aug  9 06:24:00 2023] GET /smart-controller/devices/docker01/ => generated 1469 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 29/29] 172.19.0.1 () {46 vars in 821 bytes} [Wed Aug  9 06:24:00 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 7 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 30/30] 172.19.0.1 () {46 vars in 835 bytes} [Wed Aug  9 06:24:00 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 7 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 31/31] 172.19.0.1 () {46 vars in 828 bytes} [Wed Aug  9 06:24:00 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 6 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 32/32] 172.19.0.1 () {44 vars in 866 bytes} [Wed Aug  9 06:24:01 2023] GET /smart-controller/devices/ => generated 1755 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 33/33] 172.19.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:24:01 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 6 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 34/34] 172.19.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:24:01 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 7 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 35/35] 172.19.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:24:01 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 7 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /app
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 (/tmp/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /app/app.ini
+*** Starting uWSGI 2.0.22 (64bit) on [Wed Aug  9 06:25:24 2023] ***
+compiled with version: 12.2.0 on 09 August 2023 06:13:23
+os: Linux-5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023
+nodename: c00db855cd07
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 24
+current working directory: /app
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /tmp/uwsgi.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.11.4 (main, Jul 28 2023, 05:02:22) [GCC 12.2.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7f4917fb0578
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7f4917fb0578 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 8, cores: 1)
+*** Starting uWSGI 2.0.22 (64bit) on [Wed Aug  9 06:25:33 2023] ***
+compiled with version: 12.2.0 on 09 August 2023 06:13:23
+os: Linux-5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023
+nodename: c00db855cd07
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 24
+current working directory: /app
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/uwsgi.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.11.4 (main, Jul 28 2023, 05:02:22) [GCC 12.2.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7fd615c54578
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7fd615c54578 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 7, cores: 1)
+[pid: 7|app: 0|req: 1/1] 172.19.0.1 () {46 vars in 897 bytes} [Wed Aug  9 06:26:57 2023] GET /smart-controller/devices/ => generated 1589 bytes in 21 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 2/2] 172.19.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:26:57 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 13 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 3/3] 172.19.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:26:57 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 4/4] 172.19.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:26:57 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 5/5] 172.19.0.1 () {46 vars in 897 bytes} [Wed Aug  9 06:26:59 2023] GET /smart-controller/devices/ => generated 1589 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 6/6] 172.19.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:26:59 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 13 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 7/7] 172.19.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:26:59 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 6 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 8/8] 172.19.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:26:59 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 9/9] 172.19.0.1 () {46 vars in 897 bytes} [Wed Aug  9 06:27:00 2023] GET /smart-controller/devices/ => generated 1589 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 10/10] 172.19.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:27:00 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 18 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 11/11] 172.19.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:27:01 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 12 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 12/12] 172.19.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:27:01 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 13/13] 172.19.0.1 () {46 vars in 897 bytes} [Wed Aug  9 06:27:03 2023] GET /smart-controller/devices/ => generated 1589 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 14/14] 172.19.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:27:03 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 12 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 15/15] 172.19.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:27:03 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 7 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 16/16] 172.19.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:27:03 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 5 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+docker01
+['postman0']
+[pid: 7|app: 0|req: 17/17] 172.19.0.1 () {44 vars in 767 bytes} [Wed Aug  9 06:28:21 2023] POST /smart-controller/devices/ => generated 239 bytes in 2 msecs (HTTP/1.1 302) 3 headers in 121 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 18/18] 172.19.0.1 () {42 vars in 614 bytes} [Wed Aug  9 06:28:21 2023] GET /smart-controller/devices/ => generated 1755 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 19/19] 172.19.0.1 () {46 vars in 897 bytes} [Wed Aug  9 06:28:23 2023] GET /smart-controller/devices/ => generated 1755 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 20/20] 172.19.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:28:23 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 9 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 21/21] 172.19.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:28:23 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 22/22] 172.19.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:28:23 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /app
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 (/tmp/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /app/app.ini
+*** Starting uWSGI 2.0.22 (64bit) on [Wed Aug  9 06:44:48 2023] ***
+compiled with version: 12.2.0 on 09 August 2023 06:13:23
+os: Linux-5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023
+nodename: c00db855cd07
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 24
+current working directory: /app
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /tmp/uwsgi.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.11.4 (main, Jul 28 2023, 05:02:22) [GCC 12.2.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7fa858573578
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7fa858573578 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 8, cores: 1)
+*** Starting uWSGI 2.0.22 (64bit) on [Wed Aug  9 06:45:05 2023] ***
+compiled with version: 12.2.0 on 09 August 2023 06:13:23
+os: Linux-5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023
+nodename: c00db855cd07
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 24
+current working directory: /app
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/uwsgi.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.11.4 (main, Jul 28 2023, 05:02:22) [GCC 12.2.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7f2aa5db5578
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7f2aa5db5578 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 7, cores: 1)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /app
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 (/tmp/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /app/app.ini
+*** Starting uWSGI 2.0.22 (64bit) on [Wed Aug  9 06:45:56 2023] ***
+compiled with version: 12.2.0 on 09 August 2023 06:13:23
+os: Linux-5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023
+nodename: c00db855cd07
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 24
+current working directory: /app
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /tmp/uwsgi.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.11.4 (main, Jul 28 2023, 05:02:22) [GCC 12.2.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7f61754ed578
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7f61754ed578 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 8, cores: 1)
+*** Starting uWSGI 2.0.22 (64bit) on [Wed Aug  9 06:46:19 2023] ***
+compiled with version: 12.2.0 on 09 August 2023 06:13:23
+os: Linux-5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023
+nodename: 22156eee5a39
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 24
+current working directory: /app
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/uwsgi.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.11.4 (main, Jul 28 2023, 05:02:22) [GCC 12.2.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7f6e1299b578
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7f6e1299b578 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 7, cores: 1)
+[pid: 7|app: 0|req: 1/1] 172.20.0.1 () {46 vars in 897 bytes} [Wed Aug  9 06:46:20 2023] GET /smart-controller/devices/ => generated 1589 bytes in 18 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 2/2] 172.20.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:46:20 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 12 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 3/3] 172.20.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:46:20 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 6 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 4/4] 172.20.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:46:20 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 16 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 5/5] 172.20.0.1 () {46 vars in 897 bytes} [Wed Aug  9 06:46:31 2023] GET /smart-controller/devices/ => generated 1589 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 6/6] 172.20.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:46:31 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 10 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 7/7] 172.20.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:46:31 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 5 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 8/8] 172.20.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:46:31 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+docker01
+['postman0']
+[pid: 7|app: 0|req: 9/9] 172.20.0.1 () {44 vars in 767 bytes} [Wed Aug  9 06:46:40 2023] POST /smart-controller/devices/ => generated 239 bytes in 1 msecs (HTTP/1.1 302) 3 headers in 121 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 10/10] 172.20.0.1 () {42 vars in 614 bytes} [Wed Aug  9 06:46:40 2023] GET /smart-controller/devices/ => generated 1755 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 11/11] 172.20.0.1 () {46 vars in 897 bytes} [Wed Aug  9 06:46:44 2023] GET /smart-controller/devices/ => generated 1755 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 12/12] 172.20.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:46:44 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 13 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 13/13] 172.20.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:46:44 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 8 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 14/14] 172.20.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:46:44 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 5 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+docker02
+['postman0', 'docker01']
+[pid: 7|app: 0|req: 15/15] 172.20.0.1 () {44 vars in 767 bytes} [Wed Aug  9 06:49:38 2023] POST /smart-controller/devices/ => generated 239 bytes in 1 msecs (HTTP/1.1 302) 3 headers in 121 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 16/16] 172.20.0.1 () {42 vars in 614 bytes} [Wed Aug  9 06:49:38 2023] GET /smart-controller/devices/ => generated 1921 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 17/17] 172.20.0.1 () {46 vars in 897 bytes} [Wed Aug  9 06:49:43 2023] GET /smart-controller/devices/ => generated 1921 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 18/18] 172.20.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:49:43 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 9 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 19/19] 172.20.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:49:43 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 20/20] 172.20.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:49:43 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /app
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 (/tmp/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /app/app.ini
+*** Starting uWSGI 2.0.22 (64bit) on [Wed Aug  9 06:51:57 2023] ***
+compiled with version: 12.2.0 on 09 August 2023 06:13:23
+os: Linux-5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023
+nodename: 22156eee5a39
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 24
+current working directory: /app
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /tmp/uwsgi.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.11.4 (main, Jul 28 2023, 05:02:22) [GCC 12.2.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7fef1cc7f578
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7fef1cc7f578 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 151, cores: 1)
+*** Starting uWSGI 2.0.22 (64bit) on [Wed Aug  9 06:52:07 2023] ***
+compiled with version: 12.2.0 on 09 August 2023 06:13:23
+os: Linux-5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023
+nodename: 22156eee5a39
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 24
+current working directory: /app
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/uwsgi.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.11.4 (main, Jul 28 2023, 05:02:22) [GCC 12.2.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7f0666c3a578
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7f0666c3a578 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 7, cores: 1)
+[pid: 7|app: 0|req: 1/1] 172.20.0.1 () {46 vars in 897 bytes} [Wed Aug  9 06:52:09 2023] GET /smart-controller/devices/ => generated 1589 bytes in 20 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 2/2] 172.20.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:52:09 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 10 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 3/3] 172.20.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:52:09 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 6 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 4/4] 172.20.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:52:09 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 6 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+docker01
+['postman0']
+[pid: 7|app: 0|req: 5/5] 172.20.0.1 () {44 vars in 767 bytes} [Wed Aug  9 06:52:16 2023] POST /smart-controller/devices/ => generated 239 bytes in 7 msecs (HTTP/1.1 302) 3 headers in 121 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 6/6] 172.20.0.1 () {42 vars in 614 bytes} [Wed Aug  9 06:52:16 2023] GET /smart-controller/devices/ => generated 1755 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 7/7] 172.20.0.1 () {46 vars in 897 bytes} [Wed Aug  9 06:52:28 2023] GET /smart-controller/devices/ => generated 1755 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 8/8] 172.20.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:52:28 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 10 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 9/9] 172.20.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:52:28 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 6 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 10/10] 172.20.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:52:28 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 11/11] 172.20.0.1 () {44 vars in 875 bytes} [Wed Aug  9 06:52:42 2023] GET /smart-controller/devices/docker01/ => generated 1469 bytes in 9 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 12/12] 172.20.0.1 () {46 vars in 835 bytes} [Wed Aug  9 06:52:42 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 10 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 13/13] 172.20.0.1 () {46 vars in 821 bytes} [Wed Aug  9 06:52:42 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 5 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 14/14] 172.20.0.1 () {46 vars in 828 bytes} [Wed Aug  9 06:52:42 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 15/15] 172.20.0.1 () {44 vars in 866 bytes} [Wed Aug  9 06:52:43 2023] GET /smart-controller/devices/ => generated 1755 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 16/16] 172.20.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:52:43 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 9 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 17/17] 172.20.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:52:43 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 6 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 18/18] 172.20.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:52:43 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 19/19] 172.20.0.1 () {44 vars in 875 bytes} [Wed Aug  9 06:52:44 2023] GET /smart-controller/devices/postman0/ => generated 1469 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 20/20] 172.20.0.1 () {46 vars in 835 bytes} [Wed Aug  9 06:52:44 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 10 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 21/21] 172.20.0.1 () {46 vars in 828 bytes} [Wed Aug  9 06:52:44 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 6 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 22/22] 172.20.0.1 () {46 vars in 821 bytes} [Wed Aug  9 06:52:44 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 23/23] 172.20.0.1 () {44 vars in 866 bytes} [Wed Aug  9 06:52:45 2023] GET /smart-controller/devices/ => generated 1755 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 24/24] 172.20.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:52:45 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 25/25] 172.20.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:52:45 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 26/26] 172.20.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:52:45 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 27/27] 172.20.0.1 () {44 vars in 853 bytes} [Wed Aug  9 06:52:47 2023] GET /smart-controller/tasks/ => generated 9 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 78 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 28/28] 172.20.0.1 () {44 vars in 857 bytes} [Wed Aug  9 06:52:50 2023] GET /smart-controller/devices/ => generated 1755 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 29/29] 172.20.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:52:50 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 13 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 30/30] 172.20.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:52:50 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 5 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 31/31] 172.20.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:52:50 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 32/32] 172.20.0.1 () {44 vars in 875 bytes} [Wed Aug  9 06:52:52 2023] GET /smart-controller/devices/docker01/ => generated 1469 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 33/33] 172.20.0.1 () {46 vars in 835 bytes} [Wed Aug  9 06:52:52 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 14 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 34/34] 172.20.0.1 () {46 vars in 821 bytes} [Wed Aug  9 06:52:52 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 6 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 35/35] 172.20.0.1 () {46 vars in 828 bytes} [Wed Aug  9 06:52:52 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 36/36] 172.20.0.1 () {44 vars in 866 bytes} [Wed Aug  9 06:52:54 2023] GET /smart-controller/devices/ => generated 1755 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 37/37] 172.20.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:52:54 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 9 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 38/38] 172.20.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:52:54 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 39/39] 172.20.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:52:54 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 5 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 40/40] 172.20.0.1 () {46 vars in 897 bytes} [Wed Aug  9 06:55:34 2023] GET /smart-controller/devices/ => generated 1755 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 7|app: 0|req: 41/41] 172.20.0.1 () {46 vars in 826 bytes} [Wed Aug  9 06:55:35 2023] GET /static/css/bootstrap.min.css => generated 0 bytes in 9 msecs (HTTP/1.1 304) 4 headers in 194 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 42/42] 172.20.0.1 () {46 vars in 812 bytes} [Wed Aug  9 06:55:35 2023] GET /static/js/jquery-3.7.0.min.js => generated 0 bytes in 6 msecs (HTTP/1.1 304) 4 headers in 195 bytes (0 switches on core 0)
+[pid: 7|app: 0|req: 43/43] 172.20.0.1 () {46 vars in 819 bytes} [Wed Aug  9 06:55:35 2023] GET /static/js/bootstrap.bundle.min.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 4 headers in 198 bytes (0 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /app
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 (/tmp/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /app/app.ini
+*** Starting uWSGI 2.0.22 (64bit) on [Wed Aug  9 07:02:19 2023] ***
+compiled with version: 12.2.0 on 09 August 2023 06:13:23
+os: Linux-5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023
+nodename: 22156eee5a39
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 24
+current working directory: /app
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /tmp/uwsgi.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.11.4 (main, Jul 28 2023, 05:02:22) [GCC 12.2.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7f9a80c1f578
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7f9a80c1f578 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 8, cores: 1)
+*** Starting uWSGI 2.0.22 (64bit) on [Wed Aug  9 07:02:29 2023] ***
+compiled with version: 12.2.0 on 09 August 2023 06:13:23
+os: Linux-5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023
+nodename: 22156eee5a39
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 24
+current working directory: /app
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/uwsgi.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.11.4 (main, Jul 28 2023, 05:02:22) [GCC 12.2.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7f26bfa60578
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7f26bfa60578 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 7, cores: 1)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /app
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 (/tmp/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /app/app.ini
+*** Starting uWSGI 2.0.22 (64bit) on [Wed Aug  9 07:03:06 2023] ***
+compiled with version: 12.2.0 on 09 August 2023 06:13:23
+os: Linux-5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023
+nodename: 22156eee5a39
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 24
+current working directory: /app
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /tmp/uwsgi.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.11.4 (main, Jul 28 2023, 05:02:22) [GCC 12.2.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7fc034763578
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7fc034763578 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 14, cores: 1)
+*** Starting uWSGI 2.0.22 (64bit) on [Wed Aug  9 07:04:13 2023] ***
+compiled with version: 12.2.0 on 09 August 2023 06:13:23
+os: Linux-5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023
+nodename: fc6e9f1ecaef
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 24
+current working directory: /app
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/uwsgi.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.11.4 (main, Jul 28 2023, 05:02:22) [GCC 12.2.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7fdb94c91578
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7fdb94c91578 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 7, cores: 1)

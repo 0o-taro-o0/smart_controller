@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}機器一覧{% endblock %}
+{% block content %}
+    <h1>機器一覧</h1>
+    <div class="col-lg-4">
+        <div class="bs-component">
+            <div class="list-group">
+                {% for device in devices %}
+                    <a href="{{ url_for('devices.signals', device_name=device['device_name']) }}"
+                       class="list-group-item list-group-item-action">{{ device['device_name'] }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
