@@ -35,7 +35,8 @@ def signals(device_name: str):
             # 信号読み取り開始 並列
             # 指定秒後にクライアント側からAjaxで信号登録の成否確認(signalにhttpリクエスト)し、結果に応じて表示を変更
             # config.jsonへの書き込みは別処理
-            signal = 'start learning signal'
+            signal = 'start learning signal'    # 仮
+            config.add_signal(device_name, signal_name, signal) # 仮
             return jsonify({'message': 'starting to learn new signal'}), 200
         return jsonify({'message': f'the signal name of {device_name} already exists'}), 400
     if request.method == 'DELETE':
@@ -47,4 +48,4 @@ def signals(device_name: str):
 def signal(device_name: str, signal_name: str):
     device_name, signal_name = map(escape, (device_name, signal_name))
     print((device_name, signal_name))
-    # return device_name+signal_name
+    return device_name+signal_name, 200

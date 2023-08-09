@@ -1,15 +1,88 @@
 {% extends 'base.html' %}
 {% block title %}{{ device_name }} 信号一覧{% endblock %}
+{% block modal %}
+    <script type="text/javascript">
+        $(function () {
+            $('#sense-signal-button').click(
+                function () {
+                    let hostUrl = '{{ url_for('devices.signals', device_name=device_name) }}';
+                    let signal_name = $('#signal-name-input').val();
+                    console.log(signal_name);
+                    $.ajax({
+                        url: hostUrl,
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {signal_name: signal_name, device_name: '{{ device_name }}'},
+                        timeout: 3000,
+                    }).done(function (data) {
+                        $('#signal-name-input').addClass('is-valid').removeClass('is-invalid');
+                        $('#signal-read-progress').removeClass('d-none');
+                        let countdown = function (time, count) {
+                            $('#signal-read-progress div.progress-bar').css({width: ((count)/time)*100+'%'})
+                            if (time+1 === count) {
+                                $.get('{{ url_for('devices.signals', device_name=device_name) }}'+signal_name+'/', function (data) {
+                                    location.reload();
+                                })
+                                return;
+                            }
+                            setTimeout(function () {
+                                countdown(time, count+1)
+                            }, 1000)
+                        }
+                        countdown(10, 0);
+                    }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                        $('#signal-name-input').addClass('is-invalid').removeClass('is-valid');
+                    })
+                });
+        });
+
+    </script>
+    <!-- Modal -->
+    <div class="modal fade" id="addSignalModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">信号を追加</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="signal-name-input" placeholder="信号名を入力"></input>
+
+                </div>
+                <div class="modal-body d-none" id="signal-read-progress">
+                    <p>リモコンをRaspberryPiに向けて読み込みたいスイッチを押してください。</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                             aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="sense-signal-button">信号の読み取りを開始</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
 {% block content %}
     <h1><a href="{{ url_for('devices.devices') }}">{{ device_name }}</a></h1>
     <div class="col-lg-4">
-        <div class="bs-component">
+        <div class="bs-component mb-1">
             <div class="list-group">
                 {% for signal in signals %}
-                    <a href="{{ url_for('devices.signal', device_name=device_name, signal_name=signal['signal_name']) }}"
-                       class="list-group-item list-group-item-action">{{ signal['signal_name'] }}</a>
+                    <button onclick=""
+                            href="{{ url_for('devices.signal', device_name=device_name, signal_name=signal['signal_name']) }}"
+                            class="list-group-item list-group-item-action">{{ signal['signal_name'] }}</button>
                 {% endfor %}
             </div>
+        </div>
+        <div class="bs-component">
+            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#addSignalModal">
+                信号を追加
+            </button>
         </div>
     </div>
 

@@ -31,7 +31,7 @@ def valid_signal_name(device_name: str, signal_name: str) -> bool:
     if device_name not in device_names:
         return False
     if signal_name in signal_names:
-        same_signal_name_devices = [signal['device_name'] for signal in signals if signal['device_name'] == device_name]
+        same_signal_name_devices = [signal['device_name'] for signal in signals if signal['signal_name'] == signal_name]
         if device_name in same_signal_name_devices:
             return False
     return True
