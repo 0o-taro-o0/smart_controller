@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}定期実行一覧{% endblock %}
+{% block content %}
+    <h1>定期実行一覧</h1>
+    <div class="col-lg-4">
+        <div class="bs-component">
+            <div class="list-group">
+                {% for task in tasks %}
+                    <a href="{{ url_for('tasks.task_detail', task_name=task['task_name']) }}"
+                       class="list-group-item list-group-item-action">{{ task['task_name'] }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
