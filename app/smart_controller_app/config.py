@@ -15,10 +15,16 @@ signal_names = [signal['signal_name'] for signal in signals]
 tasks = config_data['tasks']
 
 
-def add_device(device_name: str):
-    print(device_name)
-    print(device_names)
+def valid_device_name(device_name: str) -> bool:
+    if '/' in device_name:
+        return False
     if device_name in device_names:
+        return False
+    return True
+
+
+def add_device(device_name: str) -> bool:
+    if not valid_device_name(device_name):
         return False
     devices.append({
         'device_name': device_name
@@ -28,6 +34,8 @@ def add_device(device_name: str):
 
 
 def valid_signal_name(device_name: str, signal_name: str) -> bool:
+    if '/' in signal_name:
+        return False
     if device_name not in device_names:
         return False
     if signal_name in signal_names:
@@ -36,13 +44,14 @@ def valid_signal_name(device_name: str, signal_name: str) -> bool:
             return False
     return True
 
-def add_signal(device_name: str, signal_name: str, signal: str) -> bool:
+
+def add_signal(device_name: str, signal_name: str, signal_data: str) -> bool:
     if not valid_signal_name(device_name, signal_name):
         return False
     signals.append({
         'signal_name': signal_name,
         'device_name': device_name,
-        'signal': signal
+        'signal_data': signal_data
     })
     __save_config_data()
     return True
@@ -62,6 +71,19 @@ def delete_device(device_name: str):
     # config_data['tasks'] = [task for task in tasks if task['device_name'] != device_name]
     __save_config_data()
     return True
+
+
+def delete_signal(device_name: str, signal_name: str):
+    config_data['signals'] = [signal for signal in signals if
+                              not (signal['device_name'] == device_name and signal['signal_name'] == signal_name)]
+    # config_data['tasks'] = [task for task in tasks if
+    #                         not (task['device_name'] == device_name and task['signal_name'] == signal_name)]
+    __save_config_data()
+    return True
+
+
+def signal_names_of(device_name: str):
+    return [signal['signal_name'] for signal in signals if signal['device_name'] == device_name]
 
 
 def __save_config_data():

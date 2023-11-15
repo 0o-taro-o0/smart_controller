@@ -1,16 +1,139 @@
 {% extends 'base.html' %}
 {% block title %}機器一覧{% endblock %}
-{% block content %}
-    <h1>機器一覧</h1>
-    <div class="col-lg-4">
-        <div class="bs-component">
-            <div class="list-group">
-                {% for device in devices %}
-                    <a href="{{ url_for('devices.signals', device_name=device['device_name']) }}"
-                       class="list-group-item list-group-item-action">{{ device['device_name'] }}</a>
-                {% endfor %}
+{% block modal %}
+    <!-- 機器追加 -->
+    <script type="text/javascript">
+        $(function () {
+            $('#add-device-button').click(
+                function () {
+                    let hostUrl = '{{ url_for('devices.devices') }}';
+                    let device_name = $('#device-name-input').val();
+                    $.ajax({
+                        url: hostUrl,
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {device_name: device_name},
+                        timeout: 3000,
+                    }).done(function (data) {
+                        $('#device-name-input').addClass('is-valid').removeClass('is-invalid');
+                        location.reload();
+                    }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                        $('#device-name-input').addClass('is-invalid').removeClass('is-valid');
+                    })
+                });
+        });
+    </script>
+    <div class="modal fade" id="addDeviceModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">機器を追加</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="device-name-input" placeholder="機器名を入力">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="add-device-button">機器を登録</button>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- 機器削除 -->
+    <script type="text/javascript">
+        $(function () {
+            let device_name = ''
+            $('.delete-device-icon').click(function () {
+                device_name = $(this).data('device_name');
+            })
+            $('#delete-device-button').click(
+                function () {
+                    let hostUrl = '{{ url_for('devices.devices') }}' + device_name + '/';
+                    let $device_name_input = $('#deleting-device-name-input');
+                    if ($device_name_input.val() !== device_name) {
+                        $device_name_input.addClass('is-invalid').removeClass('is-valid');
+                        return;
+                    }
+                    $.ajax({
+                        url: hostUrl,
+                        type: 'DELETE',
+                        timeout: 3000,
+                    }).done(function (data) {
+                        location.reload();
+                    }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                        location.reload();
+                    })
+                });
+        });
+    </script>
+    <div class="modal fade" id="deleteDeviceModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">機器を削除</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>この機器を削除する場合は、機器名を入力のうえ「機器を削除」ボタンを押してください。<br>
+                        機器を削除すると、関連する信号や定期実行タスクも削除されます。
+                    </p>
+                    <p class="text-danger">この操作は取り消せません。</p>
+                    <input type="text" class="form-control" id="deleting-device-name-input"
+                           placeholder="削除する機器名を入力">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="delete-device-button">機器を削除</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="row d-flex justify-content-around">
+        <h1 class="m-2">機器一覧</h1>
+        <div class=" ml-auto text-center d-flex align-items-center">
+            <a class="item-editor-controller m-2 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
+                     viewBox="0 0 16 16">
+                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="bs-component mb-1">
+            <ul class="list-group">
+                {% for device in devices %}
+                    <li class="d-flex justify-content-between list-group-item list-group-item-action">
+                        <a href="{{ url_for('devices.signals', device_name=device['device_name']) }}"
+                           class="d-block w-100 text-decoration-none text-dark">{{ device['device_name'] }}
+                        </a>
+                        <a class="text-danger d-none item-editor delete-device-icon"
+                           data-device_name="{{ device['device_name'] }}"
+                           data-toggle="modal"
+                           data-target="#deleteDeviceModal">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-trash3" viewBox="0 0 16 16">
+                                <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                            </svg>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="bs-component mb-1 item-editor d-none">
+            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#addDeviceModal">
+                機器を追加
+            </button>
+        </div>
+    </div>
 {% endblock %}

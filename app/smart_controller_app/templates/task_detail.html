@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}{{ task['task_name'] }}{% endblock %}
+{% block modal %}{% endblock %}
+{% block content %}
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('tasks.tasks') }}">定期実行一覧</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ task['task_name'] }}</li>
+        </ol>
+    </nav>
+    <div class="row d-flex justify-content-around">
+        <h1 class="m-2">{{ task['task_name'] }}</h1>
+        <div class=" ml-auto text-center d-flex align-items-center">
+            <a class="item-editor-controller m-2 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
+                     viewBox="0 0 16 16">
+                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="deviceNameSelect">機器名</label>
+        <select class="form-control" id="deviceNameSelect">
+            {% for device_name in device_names %}
+                <option value="{{ device_name }}" {% if device_name == task['device_name'] %}
+                        selected{% endif %} >{{ device_name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="signalNameSelect">信号名</label>
+        <select class="form-control" id="signalNameSelect">
+            {% for signal_name in signal_names_of(task['device_name']) %}
+                <option value="{{ task['device_name'] }}_{{ signal_name }}" {% if signal_name == task['signal_name'] %}
+                        selected{% endif %}>{{ signal_name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <h5>実行条件</h5>
+        <div class="form-group">
+        <label for="signalNameSelect">月</label>
+        <select class="form-control" id="signalNameSelect">
+            {% for signal_name in signal_names_of(task['device_name']) %}
+                <option value="{{ task['device_name'] }}_{{ signal_name }}" {% if signal_name == task['signal_name'] %}
+                        selected{% endif %}>{{ signal_name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+{% endblock %}

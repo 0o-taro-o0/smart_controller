@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block title %}{{ device_name }} 信号一覧{% endblock %}
 {% block modal %}
+    <!-- 信号追加 -->
     <script type="text/javascript">
         $(function () {
             $('#sense-signal-button').click(
                 function () {
                     let hostUrl = '{{ url_for('devices.signals', device_name=device_name) }}';
                     let signal_name = $('#signal-name-input').val();
-                    console.log(signal_name);
                     $.ajax({
                         url: hostUrl,
                         type: 'POST',
@@ -18,15 +18,15 @@
                         $('#signal-name-input').addClass('is-valid').removeClass('is-invalid');
                         $('#signal-read-progress').removeClass('d-none');
                         let countdown = function (time, count) {
-                            $('#signal-read-progress div.progress-bar').css({width: ((count)/time)*100+'%'})
-                            if (time+1 === count) {
-                                $.get('{{ url_for('devices.signals', device_name=device_name) }}'+signal_name+'/', function (data) {
+                            $('#signal-read-progress div.progress-bar').css({width: ((count) / time) * 100 + '%'})
+                            if (time + 1 === count) {
+                                $.get('{{ url_for('devices.signals', device_name=device_name) }}' + signal_name + '/', function (data) {
                                     location.reload();
                                 })
                                 return;
                             }
                             setTimeout(function () {
-                                countdown(time, count+1)
+                                countdown(time, count + 1)
                             }, 1000)
                         }
                         countdown(10, 0);
@@ -35,9 +35,7 @@
                     })
                 });
         });
-
     </script>
-    <!-- Modal -->
     <div class="modal fade" id="addSignalModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -48,7 +46,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <input type="text" class="form-control" id="signal-name-input" placeholder="信号名を入力"></input>
+                    <input type="text" class="form-control" id="signal-name-input" placeholder="信号名を入力">
 
                 </div>
                 <div class="modal-body d-none" id="signal-read-progress">
@@ -64,26 +62,123 @@
             </div>
         </div>
     </div>
-{% endblock %}
 
+    <!-- 信号削除 -->
+    <script type="text/javascript">
+        $(function () {
+            let signal_name = ''
+            $('.delete-signal-icon').click(function () {
+                signal_name = $(this).data('signal_name');
+            })
+            $('#delete-signal-button').click(
+                function () {
+                    let hostUrl = '{{ url_for('devices.signals', device_name=device_name) }}' + signal_name + '/';
+                    let $signal_name_input = $('#deleting-signal-name-input');
+                    if ($signal_name_input.val() !== signal_name) {
+                        $signal_name_input.addClass('is-invalid').removeClass('is-valid');
+                        return;
+                    }
+                    $.ajax({
+                        url: hostUrl,
+                        type: 'DELETE',
+                        timeout: 3000,
+                    }).done(function (data) {
+                        location.reload();
+                    }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                        location.reload();
+                    })
+                });
+        });
+    </script>
+    <div class="modal fade" id="deleteSignalModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">信号を削除</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>この信号を削除する場合は、信号名を入力のうえ「信号を削除」ボタンを押してください。<br>
+                        信号を削除すると、関連する定期実行タスクも削除されます。
+                    </p>
+                    <p class="text-danger">この操作は取り消せません。</p>
+                    <input type="text" class="form-control" id="deleting-signal-name-input"
+                           placeholder="削除する信号名を入力">
 
-{% block content %}
-    <h1><a href="{{ url_for('devices.devices') }}">{{ device_name }}</a></h1>
-    <div class="col-lg-4">
-        <div class="bs-component mb-1">
-            <div class="list-group">
-                {% for signal in signals %}
-                    <button onclick=""
-                            href="{{ url_for('devices.signal', device_name=device_name, signal_name=signal['signal_name']) }}"
-                            class="list-group-item list-group-item-action">{{ signal['signal_name'] }}</button>
-                {% endfor %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="delete-signal-button">信号を削除</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
+                </div>
             </div>
         </div>
-        <div class="bs-component">
+    </div>
+{% endblock %}
+
+{% block content %}
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('devices.devices') }}">機器一覧</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ device_name }}</li>
+        </ol>
+    </nav>
+    <div class="row d-flex justify-content-around">
+        <h1 class="m-2">{{ device_name }}</h1>
+        <div class=" ml-auto text-center d-flex align-items-center">
+            <a class="item-editor-controller m-2 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
+                     viewBox="0 0 16 16">
+                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            $('.send-signal-a').click(function () {
+                let signal_name = $(this).data('signal_name');
+                let hostUrl = '{{ url_for('devices.signals', device_name=device_name) }}'+signal_name+'/';
+                $.ajax({
+                    url: hostUrl,
+                    type: 'GET',
+                    timeout: 3000,
+                }).done(function (data) {
+                    alert('succeeded to send signal');
+                }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert('failed to send signal');
+                })
+            })
+        })
+    </script>
+    <div class="col-lg-4">
+        <div class="bs-component mb-1">
+            <ul class="list-group">
+                {% for signal in signals %}
+                    <li class="d-flex justify-content-between list-group-item list-group-item-action">
+                        <a
+                                class="d-block w-100 text-decoration-none text-dark send-signal-a"
+                                data-signal_name="{{ signal['signal_name'] }}">{{ signal['signal_name'] }}
+                        </a>
+                        <a class="text-danger d-none item-editor delete-signal-icon"
+                           data-signal_name="{{ signal['signal_name'] }}" data-toggle="modal"
+                           data-target="#deleteSignalModal">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-trash3" viewBox="0 0 16 16">
+                                <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                            </svg>
+                        </a>
+                    </li>
+
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="bs-component mb-1 d-none item-editor">
             <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#addSignalModal">
                 信号を追加
             </button>
         </div>
     </div>
-
 {% endblock %}

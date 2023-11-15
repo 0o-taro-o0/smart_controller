@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, jsonify, redirect, url_for, abort
+from flask import Blueprint, render_template, request, jsonify, abort
 from markupsafe import escape
 
 import config
@@ -11,12 +11,16 @@ def devices():
     if request.method == 'GET':
         return render_template('devices.html', devices=config.devices)
     if request.method == 'POST':
-        if config.add_device(request.form.get('device_name')):
-            return redirect(url_for('devices.devices'))
+        device_name = request.form.get('device_name')
+        if not device_name:
+            abort(400)
+        if config.valid_device_name(device_name):
+            config.add_device(device_name)
+            return jsonify({'message': 'added new device'}), 200
         return jsonify({'message': 'the device name already exists'}), 400
     if request.method == 'DELETE':
         config.delete_all_devices()
-        return redirect(url_for('devices.devices'))
+        return jsonify({'message': 'deleted successfully'}), 200
 
 
 @devices_module.route('/smart-controller/devices/<string:device_name>/', methods=['GET', 'POST', 'DELETE'])
@@ -35,17 +39,22 @@ def signals(device_name: str):
             # 信号読み取り開始 並列
             # 指定秒後にクライアント側からAjaxで信号登録の成否確認(signalにhttpリクエスト)し、結果に応じて表示を変更
             # config.jsonへの書き込みは別処理
-            signal = 'start learning signal'    # 仮
-            config.add_signal(device_name, signal_name, signal) # 仮
+            signal_data = 'start learning signal'    # 仮
+            config.add_signal(device_name, signal_name, signal_data)  # 仮
             return jsonify({'message': 'starting to learn new signal'}), 200
         return jsonify({'message': f'the signal name of {device_name} already exists'}), 400
     if request.method == 'DELETE':
         config.delete_device(device_name)
-        return redirect(url_for('devices.devices'))
+        return jsonify({'message': 'deleted successfully'}), 200
 
 
-@devices_module.route('/smart-controller/devices/<string:device_name>/<string:signal_name>/')
+@devices_module.route('/smart-controller/devices/<string:device_name>/<string:signal_name>/', methods=['GET', 'DELETE'])
 def signal(device_name: str, signal_name: str):
     device_name, signal_name = map(escape, (device_name, signal_name))
-    print((device_name, signal_name))
-    return device_name+signal_name, 200
+    if request.method == 'GET':
+        # 信号送信
+        return jsonify({'message': f'{signal_name} signal of {device_name} sent successfully'}), 200
+    if request.method == 'DELETE':
+        print(('delete', device_name, signal_name))
+        config.delete_signal(device_name, signal_name)
+        return jsonify({'message': 'deleted successfully'}), 200
